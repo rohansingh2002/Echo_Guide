@@ -1,0 +1,9 @@
+
+import os                                               # This library provides a portable way of using operating system dependent functionality
+import webbrowser                                       # This library provides a high-level interface to allow displaying web-based documents to users. 
+import speech_recognition as sr                         # This library is used for speech recognition of speaker by allenite
+import pyttsx3                                          # This library is used to convert text to speech
+import pywhatkit                                        # This library is used for sending WhatsApp messages at a certain time
+import datetime                                         # This library is used to get date and time from my device
+import wikipedia                                        # This library is used to getting an information from wikipedia
+import pyjokes                                          # This library is used to get a jokes
