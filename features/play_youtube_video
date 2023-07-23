@@ -1,1 +1,47 @@
 
+import os                                               # This library provides a portable way of using operating system dependent functionality
+import webbrowser                                       # This library provides a high-level interface to allow displaying web-based documents to users. 
+import speech_recognition as sr                         # This library is used for speech recognition of speaker by allenite
+import pyttsx3                                          # This library is used to convert text to speech
+import pywhatkit                                        # This library is used for sending WhatsApp messages at a certain time
+import datetime                                         # This library is used to get date and time from my device
+import wikipedia                                        # This library is used to getting an information from wikipedia
+import pyjokes                                          # This library is used to get a jokes
+
+
+listener = sr.Recognizer()                              # This statement is used for recognize your voice
+engine = pyttsx3.init()                                 # This statement is used to convert your voice into text and search
+voices = engine.getProperty('voices')                   #This statement is used to get a voice of allenite
+engine.setProperty('voice', voices[1].id) 
+
+def talk(text):                                         #This function is used to repeat your text by allenite
+    engine.say(text)
+    engine.runAndWait()
+def take_command():                                     #This statement is used give command to allenite
+    try:
+        with sr.Microphone() as source:                 #This statement is used to check your microphone 
+            print('listening...')  
+            # talk('say something')                       #This statement is used to check allenite is ready for listening
+
+            voice = listener.listen(source)             #This statement is used listen the voice 
+            command = listener.recognize_google(voice)  #This statement is used to pass the voice to google for searching
+            command = command.lower()
+            if 'allenite' in command:                      #This statement is used to check allenite in command
+                command = command.replace('allenite', '')
+    except:                                             #This statement is used when some error occur in try statement
+        print("Something Wrong")    
+    return command
+
+
+def run_allenite():
+    command = take_command()
+    print(command)
+    if 'play' in command:                               # This statement is used to play the video of youtube
+        song = command.replace('play', '')
+        talk('playing ' + song)
+        pywhatkit.playonyt(song)
+   
+talk('Heyy,I am Allenite, How may i Help You')
+
+while True:
+    run_allenite()                                      
