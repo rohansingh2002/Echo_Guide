@@ -1,1 +1,3 @@
-
+def talk(text):                                         #This function is used to repeat your text by allenite
+    engine.say(text)
+    engine.runAndWait()
