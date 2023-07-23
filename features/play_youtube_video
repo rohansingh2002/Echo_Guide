@@ -1,4 +1,3 @@
-
 import os                                               # This library provides a portable way of using operating system dependent functionality
 import webbrowser                                       # This library provides a high-level interface to allow displaying web-based documents to users. 
 import speech_recognition as sr                         # This library is used for speech recognition of speaker by allenite
