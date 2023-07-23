@@ -1,1 +1,15 @@
+def take_command():                                     #This statement is used give command to allenite
+    try:
+        with sr.Microphone() as source:                 #This statement is used to check your microphone 
+            print('listening...')  
+            # talk('say something')                       #This statement is used to check allenite is ready for listening
+
+            voice = listener.listen(source)             #This statement is used listen the voice 
+            command = listener.recognize_google(voice)  #This statement is used to pass the voice to google for searching
+            command = command.lower()
+            if 'allenite' in command:                      #This statement is used to check allenite in command
+                command = command.replace('allenite', '')
+    except:                                             #This statement is used when some error occur in try statement
+        print("Something Wrong")    
+    return command
 
