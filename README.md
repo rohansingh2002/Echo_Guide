@@ -1,5 +1,5 @@
-# Personal-Voice-Assistant
-• Designed and developed a personal voice assistant.
+# Echo Guide
+• Designed and developed a EchoGuide.
 • Enabled users to open system apps, send messages, and take screenshots through voice commands.
 • Utilized skills in software development and programming.
 • Integrated various APIs and libraries for interaction with system apps and messaging.
